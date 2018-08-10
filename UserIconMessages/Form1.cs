@@ -16,5 +16,25 @@ namespace UserIconMessages
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                throw new NotImplementedException();
+            }
+            catch (NotImplementedException notImp)
+            {
+
+                DialogResult result = MessageBox.Show("Proceed?", notImp.Message,
+                MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+
+                textBox1.Text = result.ToString();
+
+                if (result == DialogResult.Yes) { label1.Text = "proceeding..."; }
+                if (result == DialogResult.No) { label1.Text = "Stopping..."; }
+
+            }
+        }
     }
 }
